@@ -1,0 +1,197 @@
+/* Import remains unchanged */
+@import 'https://www.nerdfonts.com/assets/css/webfont.css';
+
+i {
+  color: rgb(115 130 175 / 95%);
+  margin-right: 7px;
+}
+
+body {
+  color: rgb(255 255 255 / 90%);
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  overflow: hidden;
+  background: #1E1E2E; /* dark mocha background */
+}
+
+div,
+span,
+p {
+  cursor: default;
+  user-select: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  border-bottom: 1px solid rgb(255 255 255 / 5%);
+  background: linear-gradient(rgba(30, 30, 46, 0.9), rgba(40, 37, 57, 0.85));
+}
+
+.app {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* auto-sized left and right, centered middle */
+  align-items: center;
+  height: 100%;
+  padding: 4px 8px 4px 8px;
+}
+
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right > * {
+  margin-left: 5px;
+}
+.right > *:first-child {
+  margin-left: 0;
+}
+
+.right {
+  justify-self: end;
+}
+
+.clock {
+  height: 32px;        /* or whatever height your layout uses */
+  line-height: 18px;
+}
+ 
+/* Workspaces */
+.workspace {
+  color: transparent;
+  font-size: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 5px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.7;
+}
+
+/* Rosewater, Flamingo, Pink, Mauve for workspace 1–4 */
+.workspace:nth-child(1) {
+  background-color: #f5e0dc; /* Rosewater */
+}
+.workspace:nth-child(2) {
+  background-color: #f2cdcd; /* Flamingo */
+}
+.workspace:nth-child(3) {
+  background-color: #f5c2e7; /* Pink */
+}
+.workspace:nth-child(4) {
+  background-color: #cba6f7; /* Mauve */
+}
+
+/* Focused workspace gets a subtle glow ring */
+.workspace.focused::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+}
+
+/* Buttons */
+
+/* BATTERY - green tint */
+.battery {
+  position: relative;
+  color: #A6E3A1;
+  background: rgba(166, 227, 161, 0.15);
+  padding: 2px 8px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.battery .charging-icon {
+  position: absolute;
+  font-size: 7px;
+  left: -8px;
+  top: 3px;
+  color: #A6E3A1;
+}
+
+/* BATTERY TIME INFO - lighter green */
+.battery-time-info {
+  margin-left: 0.5rem;
+  color: #8BCB9B; /* lighter green */
+  background: rgba(166, 227, 161, 0.15); /* match battery background */
+  padding: 2px 6px;
+  border-radius: 2px;
+  display: inline-block; /* keep size tight */
+}
+
+.battery-time-info.plugged-in {
+  color: #8BCB9B;
+  background: rgba(166, 227, 161, 0.15);
+  padding: 2px 6px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* NETWORK - yellow tint */
+.network {
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(249, 226, 175, 0.15); /* subtle yellow tint */
+  color: #f9e2af;
+  line-height: 1;
+  height: 18px;
+}
+
+.network-ethernet-text {
+  color: #f9e2af; /* Catppuccin Mocha yellow */
+  font-weight: 600;
+  font-family: ui-monospace, monospace;
+  display: inline-flex;       /* inline so it flows with text */
+  align-items: center;
+  gap: 3px;                 /* smaller gap */
+}
+
+.network-ethernet-text {
+  line-height: 1; 
+}
+
+/* TILING DIRECTION - red tint */
+.tiling-direction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  height: 18px;
+  background: rgba(243, 139, 168, 0.15);
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  color: #F38BA8; /* Catppuccin Mocha red */
+  font-weight: 600;
+  text-transform: none; /* Prevent all-uppercase or lowercase */
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background: rgba(243, 139, 168, 0.15);
+  color: #F38BA8;
+}
